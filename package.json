@@ -4,7 +4,7 @@
   "description": "learning mern",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "debug": "ndb server.js"
   },
   "author": "sparetm",
