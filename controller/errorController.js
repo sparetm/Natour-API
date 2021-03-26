@@ -31,12 +31,11 @@ const sendErrorDevelopment = (err, res) => {
   });
 }
 
-// universal error handling middleware. 1st argument will be error
-// types of error:-- invalid id, dublicate name, sending value more then the maximum value. 
+
 module.exports = (err, req, res, next) => { 
-    console.log(err.stack); // it shows where error happens
+    console.log(err.stack); 
     err.statusCode = err.statusCode || 500;
-    err.status = err.status || 'error'; // i.e by default, if we have 500 status code then status(json message) will be 'error'.
+    err.status = err.status || 'error'; 
      
     if(process.env.NODE_ENV === 'production'){
         let error = {...err};

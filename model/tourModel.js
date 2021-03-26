@@ -4,16 +4,16 @@ const mongoose = require('mongoose');
 //------------------------------part-6----------------------------//
 //----------------------------------------------------------------//
 
-const tourSchema = new mongoose.Schema({ // 1) creating Schema
+const tourSchema = new mongoose.Schema({ 
 
     name: {
         type: String,
-        required: [true, 'A tour must have name'], // built in data validator. This is a validator. 2nd argument is error.
+        required: [true, 'A tour must have name'], 
         unique: true,
         trim: true,
         maxlength: [40, 'A tour name must have less or equal to 40 characters'],
         minlength: [10, 'A tour name must have more or equal to 10 characters']
-       // validate: [validator.isAlpha, 'Tour name must only contain characters without spaces'] // to check only for characters without spaces.
+      
     },
     duration: {
         type: Number,
@@ -52,7 +52,7 @@ const tourSchema = new mongoose.Schema({ // 1) creating Schema
     priceDiscount: {
         type: Number,
         validate: {
-            validator: function(val) { // this only works when new document created.
+            validator: function(val) { 
                 return val < this.price;
             },
             message: 'Discount price i.e ({VALUE}) should be below regular price'
@@ -75,7 +75,7 @@ const tourSchema = new mongoose.Schema({ // 1) creating Schema
     createdAt: {
         type: Date,
         default: Date.now(),
-        //select: false // to hide it from end user
+      
     },
     startDates: [Date],
     slug: String,
@@ -89,7 +89,7 @@ const tourSchema = new mongoose.Schema({ // 1) creating Schema
 
 });
 
-const Tour = mongoose.model('Tour', tourSchema); // 2) creating model
+const Tour = mongoose.model('Tour', tourSchema); 
 
 
 module.exports = Tour;
@@ -98,16 +98,4 @@ module.exports = Tour;
 
 
 
-
-/*
-const testTour = new Tour({ // 3) creating document
-    name:"shubham",
-    rating: 4.3,
-    price: 984
-});
-
-testTour.save() // 4) save the document. it will returns a promise
-    .then(doc => {console.log(doc)})//the final content of the document
-    .catch(error => {console.log('we havw an error :- '+error)})
-*/
 

@@ -1,15 +1,14 @@
-const dotenv = require('dotenv'); //necessary for using environment variable
+const dotenv = require('dotenv'); 
 const mongoose = require('mongoose');
 dotenv.config({ path: './config.env' });
-//console.log(process.env);//it print all environment variable in console
-const app = require('./app'); //including to access app.listen
+const app = require('./app'); 
 
 //----------------------------------------------------------------//
 //------------------------------part-5----------------------------//
 //----------------------------------------------------------------//
 
 
-const DB = process.env.DATABASE_HOSTED.replace('<DATABASE_PASSWORD>', process.env.DATABASE_PASSWORD); //connection to Atlas (remotely)
+const DB = process.env.DATABASE_HOSTED.replace('<DATABASE_PASSWORD>', process.env.DATABASE_PASSWORD); 
 const connectDB = async () => {
     try{
         await mongoose.connect(DB, {

@@ -11,12 +11,10 @@ const globalErrorHandler = require('./controller/errorController')
 const tourRouter = require('./route/tourRoute.js');
 const userRouter = require('./route/userRoute.js');
 
-if(process.env.NODE_ENV === 'development'){ //we can set it as production or development 
+if(process.env.NODE_ENV === 'development'){ 
       app.use(morgan('dev'));
 }
 
-
-//it is a middleware which is used to get req body for post method
 app.use(express.json());
 
 
@@ -24,7 +22,7 @@ app.use(express.json());
 app.use(express.static(`${__dirname}/data`)); 
 
 
-app.use((req, res, next) => { //to define request time.
+app.use((req, res, next) => { 
     req.requestTime = new Date().toISOString();
     next();
     })
@@ -44,34 +42,17 @@ app.use((req, res, next) => { //to define request time.
 
 //-----route-----//
 
-//first import tourRouter from './route/tourRoute.js'
 app.use('/api/v1/tours', tourRouter); 
-
-//first import userRouter from './route/userRoute.js'
 app.use('/api/v1/users', userRouter); 
 
 
 //----------------------------------------------------------------//
 //------------------------------part-13----------------------------//
 //----------------------------------------------------------------//
-   
-//if all above route does not match i.e invalid URL
-
-
-/*
-app.all('*', (req, res, next) => {
-
-            const err = new Error(`can't find ${req.originalUrl} on this server !`); // we are using builtin error-constructor. then we are passing error.message value
-            err.status = 'fail';
-            err.statusCode = 404;
-            next(err); //passing argument in next will escape all the middleware if we meet error and go to the univarsal error handler 
-      })
-*/
 
 app.all('*', (req, res, next) => {
-      next(new AppError(`can't find ${req.originalUrl} on this server !`, 404)); //creating new object of AppError class and passing error message and statusCode as an argument.
+      next(new AppError(`can't find ${req.originalUrl} on this server !`, 404)); 
 })
-
 
 app.use(globalErrorHandler);
 
