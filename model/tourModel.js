@@ -19,10 +19,6 @@ const tourSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'A tour must have duration']
     },
-    maxGroupSize: {
-        type: Number,
-        required: [true, 'A tour must have group size']
-    },
     difficulty: {
         type: String,
         required: [true, 'A tour must have difficulty'],
@@ -49,40 +45,12 @@ const tourSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'A tour must have price']
     },
-    priceDiscount: {
-        type: Number,
-        validate: {
-            validator: function(val) { 
-                return val < this.price;
-            },
-            message: 'Discount price i.e ({VALUE}) should be below regular price'
-        }
-    },
     summary: {
         type: String,
         trim: true,
         required: [true, 'A tour must have a description']
     },
-    description: {
-        type: String,
-        trim: true
-    },
-    imageCover: {
-        type: String,
-        required: [true, 'A tour must have cover image']
-    },
-    images: [String],
-    createdAt: {
-        type: Date,
-        default: Date.now(),
-      
-    },
     startDates: [Date],
-    slug: String,
-    secretTour: {
-        type: Boolean,
-        default: false
-    }
 }, {
     toJSON: { virtuals: true },
     toObject: { virtuals: true }

@@ -65,7 +65,7 @@
       flex-direction:row;
   }
   .section_left {
-    height: 100vh;
+    height: auto;
     width:70vw;
     display: flex;
     flex-direction: column;
@@ -73,6 +73,7 @@
     margin-top:0px;
     text-align: center;
     color:#00BFA5;
+    
   }
   .section_right {
     height: 100vh;
@@ -82,12 +83,12 @@
     align-items: center;
     justify-content: space-around;
     border-left:3px solid rgb(212, 212, 212);
-    color:#696969;
+    color:#90A4AE;
     background-color:#37474F;
   }
   .section_right ul li {
       list-style-type:none;
-      text-decoration: underline;
+     
       margin-top: 70px;
   }
   .section_right ul li:last-child {
@@ -103,8 +104,12 @@
   }
   .section_right ul li:hover {
     color:rgb(182, 181, 181);
+    text-decoration: underline;
 }
 .section_right ul li:active {
+    color:rgb(255, 255, 255);
+}
+.section_right ul li:visited {
     color:rgb(255, 255, 255);
 }
 
@@ -127,6 +132,7 @@
   background-color:#37474F;
   padding: 10px 40px;
   border-radius: 10px 10px 10px 10px;
+
 }
 
 .introduction p,
@@ -143,6 +149,7 @@
   border-radius: 10px 10px 10px 10px;
   margin-top:20px;
   line-height:30px;
+  
 }
 .call,
 .parameter, 
@@ -150,11 +157,15 @@
   margin-top:80px;
 }
 .example a{
-  color:#00BFA5;
+  color:#448AFF;
   text-decoration:none;
 }
 .example a:hover{
   color:#ffffff;
+}
+
+.parameter h2{
+  margin-top:10px;
 }
   
   
@@ -185,10 +196,18 @@
     <section class="container">
         <div class="section_left">
           
+
+
+
           <div class="introduction">
             <h1>Natour API</h1>
             <p>This page is an overview of the API documentation and related resources.</p>
           </div>
+
+
+
+
+
 
           <div class="static">
             
@@ -199,15 +218,20 @@
 
           <div class="parameter">
             <h1>Parameters</h1>
-            <p>You an access any type of static file which is located in /data folder.<br>{ <span style="color:#FF1744">option</span> } can be any static file name with the file type like .html, .svg, .text, .jpg etc</p>
+            <p>You can access any type of static file like image, html etc which is located in <span style="color:#FFAB00">/data</span> folder.<br>{ <span style="color:#FF1744">option</span> } can be any static file with the file type like .html, .svg, .text, .jpg etc</p>
           </div>
 
           <div class="example">
             <h1>Example</h1>
-            <p><a href="https://natour-api.herokuapp.com/404.svg">https://natour-api.herokuapp.com/404.svg</a></p>
+            <p>Accessing a static file <span style="color:#FF1744">404.svg </span>from <span style="color:#FFAB00">/data</span> folder.<br><a href="https://natour-api.herokuapp.com/404.svg">https://natour-api.herokuapp.com/404.svg</a></p>
           </div>
 
           </div>
+
+
+
+
+
           <div class="tour">
 
             <div class="call">
@@ -226,6 +250,12 @@
             </div>
 
           </div>
+
+
+
+
+
+
           <div class="user">
 
             <div class="call">
@@ -244,16 +274,31 @@
             </div>
 
           </div>
+
+
+
+
+
+
           <div class="feature">
 
             <div class="call">
               <h1>API Call</h1>
-              <p>You can call by using Url :- https://natour-api.herokuapp.com/{ <span style="color:#FF1744">option</span> }</p>
+              <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }</p>
             </div>
   
             <div class="parameter">
               <h1>Parameters</h1>
-              <p></p>
+              <h2>Basic Filtering</h2>
+              <p>You can use only one parameter or more than one parameters for filtering the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like duration=5, difficulty=easy etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with '&' symbol like duration=5&difficulty=easy</p> 
+
+              <div class="example">
+                <h1>Example</h1>
+                <p><a href="https://natour-api.herokuapp.com/api/v1/tours?duration=5&difficulty=easy">https://natour-api.herokuapp.com/api/v1/tours?duration=5&difficulty=easy</a></p>
+              </div>
+              
+              <h2>Advance Filtering</h2>
+              <p>{ <span style="color:#FF1744">option</span> } can be any thing like duration[gte]=5, difficulty[let]=easy, difficulty[e]=easy etc and { <span style="color:#FF1744">options</span> } can be like duration[gte]=5&difficulty=easy</p> </p>
             </div>
   
             <div class="example">
@@ -262,6 +307,12 @@
             </div>
 
           </div>
+
+
+
+
+
+
           <div class="import_export">
 
             <div class="call">
@@ -281,6 +332,10 @@
 
           </div>
         </div>
+
+
+
+
         <div class="section_right">
             <h1>End-Points</h1>
            <ul>
