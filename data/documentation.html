@@ -75,10 +75,12 @@
     color:#00BFA5;
     
   }
+  
   .section_right {
     height: 100vh;
     width:30vw;
     display: flex;
+    
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -86,6 +88,10 @@
     color:#90A4AE;
     background-color:#37474F;
   }
+  
+
+  
+
   .section_right ul li {
       list-style-type:none;
      
@@ -117,7 +123,7 @@
 .static,
 .user,
 .tour,
-.import_export,
+.import_delete,
 .feature{
   display:none;
 }
@@ -126,20 +132,20 @@
 .static h1,
 .user h1,
 .tour h1,
-.import_export h1,
+.import_delete h1,
 .feature h1{
   display:inline-block;
   background-color:#37474F;
   padding: 10px 40px;
   border-radius: 10px 10px 10px 10px;
-
+  margin-top:20px;
 }
 
 .introduction p,
 .static p,
 .user p,
 .tour p,
-.import_export p,
+.import_delete p,
 .feature p{
   height:auto;
   width:60vw;
@@ -147,14 +153,14 @@
   background-color:#37474F;
   padding: 15px 40px;
   border-radius: 10px 10px 10px 10px;
-  margin-top:20px;
+  margin-top:10px;
   line-height:30px;
   
 }
 .call,
 .parameter, 
 .example{
-  margin-top:80px;
+  margin-top:50px;
 }
 .example a{
   color:#448AFF;
@@ -167,6 +173,10 @@
 .parameter h2{
   margin-top:10px;
 }
+.advance_filter {
+  margin-top:30px;
+}
+
   
   
   /*class added*/
@@ -223,7 +233,7 @@
 
           <div class="example">
             <h1>Example</h1>
-            <p>Accessing a static file <span style="color:#FF1744">404.svg </span>from <span style="color:#FFAB00">/data</span> folder.<br><a href="https://natour-api.herokuapp.com/404.svg">https://natour-api.herokuapp.com/404.svg</a></p>
+            <p>Accessing a static file <span style="color:#FF1744">404.svg </span>from <span style="color:#FFAB00">/data</span> folder (Note:- You should always put your static files in data folder)<br><a href="https://natour-api.herokuapp.com/404.svg">https://natour-api.herokuapp.com/404.svg</a></p>
           </div>
 
           </div>
@@ -259,19 +269,11 @@
           <div class="user">
 
             <div class="call">
-              <h1>API Call</h1>
-              <p>You can call by using Url :-    https://natour-api.herokuapp.com/{ <span style="color:#FF1744">option</span> }</p>
+              <h1>Not yet implemented</h1>
+              <p>This page id under <span style="color:#FF1744">development</span></p>
             </div>
   
-            <div class="parameter">
-              <h1>Parameters</h1>
-              <p></p>
-            </div>
-  
-            <div class="example">
-              <h1>Example</h1>
-              <p></p>
-            </div>
+         
 
           </div>
 
@@ -284,51 +286,161 @@
 
             <div class="call">
               <h1>API Call</h1>
-              <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }</p>
+              <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }<br>Http method which is used in this section is GET method</p>
             </div>
   
             <div class="parameter">
               <h1>Parameters</h1>
               <h2>Basic Filtering</h2>
-              <p>You can use only one parameter or more than one parameters for filtering the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like duration=5, difficulty=easy etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with '&' symbol like duration=5&difficulty=easy</p> 
+              <p>You can use only one parameter or more than one parameters for filtering the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like <span style="color:#FF1744">duration=5, difficulty=easy</span> etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with '&' symbol like <span style="color:#FF1744">duration=5&difficulty=easy</span>(both the conditions has to be true)</p> 
+              </div>
 
               <div class="example">
                 <h1>Example</h1>
                 <p><a href="https://natour-api.herokuapp.com/api/v1/tours?duration=5&difficulty=easy">https://natour-api.herokuapp.com/api/v1/tours?duration=5&difficulty=easy</a></p>
               </div>
-              
-              <h2>Advance Filtering</h2>
-              <p>{ <span style="color:#FF1744">option</span> } can be any thing like duration[gte]=5, difficulty[let]=easy, difficulty[e]=easy etc and { <span style="color:#FF1744">options</span> } can be like duration[gte]=5&difficulty=easy</p> </p>
-            </div>
-  
-            <div class="example">
-              <h1>Example</h1>
-              <p></p>
-            </div>
+             
+
+
+          <div style="margin-top:50px;color:white;  ">-------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+
+
+
+
+              <div class="call">
+                <h1>API Call</h1>
+                <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }<br>Http method which is used in this section is GET method</p>
+              </div>
+    
+              <div class="parameter">
+                <h1>Parameters</h1>
+                <h2>Advance Filtering</h2>
+                <p>You can use only one parameter or more than one parameters for filtering the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like <span style="color:#FF1744">duration[gte]=5, difficulty[let]=easy, difficulty[e]=easy</span> etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with '&' symbol like <span style="color:#FF1744">duration[gte]=5&difficulty=easy</span>(both the conditions has to be true)<br>(KEY:- [lte] is less then and equal to, [gte] is greater then and equal to, [gt] is greater then, [lt] is less then, [e] is equal to.)</p> 
+                </div>
+
+                <div class="example">
+                  <h1>Example</h1>
+                  <p><a href="https://natour-api.herokuapp.com/api/v1/tours?duration[gte]=5&difficulty=easy">https://natour-api.herokuapp.com/api/v1/tours?duration[gte]=5&difficulty=easy</a></p>
+                </div>
+
+
+
+
+                <div style="margin-top:50px;color:white;  ">-------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+
+
+
+
+
+
+                <div class="call">
+                  <h1>API Call</h1>
+                  <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }<br>Http method which is used in this section is GET method</p>
+                </div>
+      
+                <div class="parameter">
+                  <h1>Parameters</h1>
+                  <h2>Sorting</h2>
+                  <p>You can use only one parameter or more than one parameters for sorting the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like <span style="color:#FF1744">sort=price(for ascending order), sort=ratingsAverage, sort=-price(for descending order) </span> etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with ',' symbol like <span style="color:#FF1744">sort=price,ratingsAverage, sort=-price,-ratingsAverage etc</span></p> 
+                  </div>
+    
+                  <div class="example">
+                    <h1>Example</h1>
+                    <p>
+                      <a href="https://natour-api.herokuapp.com/api/v1/tours?sort=price">https://natour-api.herokuapp.com/api/v1/tours?sort=price</a><br>
+                      <a href="https://natour-api.herokuapp.com/api/v1/tours?sort=price,ratingsAverage">https://natour-api.herokuapp.com/api/v1/tours?sort=price,ratingsAverage</a><br>
+                      <a href="https://natour-api.herokuapp.com/api/v1/tours?sort=-price,-ratingsAverage">https://natour-api.herokuapp.com/api/v1/tours?sort=-price,-ratingsAverage</a><br>
+                    </p>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div style="margin-top:50px;color:white;  ">-------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+
+
+
+
+
+                    <div class="call">
+                      <h1>API Call</h1>
+                      <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option or options</span> }<br>Http method which is used in this section is GET method</p>
+                    </div>
+          
+                    <div class="parameter">
+                      <h1>Parameters</h1>
+                      <h2>Limiting fields</h2>
+                      <p>You can use only one parameter or more than one parameters for filtering the data. List of parameters can be found in Introduction section<br>{ <span style="color:#FF1744">option</span> } can be any parameter like <span style="color:#FF1744">fields=name, fields=duration, fields=price</span> etc and { <span style="color:#FF1744">options</span> } can be combination of parameters combined with ',' symbol like <span style="color:#FF1744">fields=name,duration,price</span></p> 
+                      </div>
+        
+                      <div class="example">
+                        <h1>Example</h1>
+                        <p>
+                          <a href="https://natour-api.herokuapp.com/api/v1/tours?fields=name,duration,price">https://natour-api.herokuapp.com/api/v1/tours?fields=name,duration,price</a><br>
+                          <a href="https://natour-api.herokuapp.com/api/v1/tours?fields=name">https://natour-api.herokuapp.com/api/v1/tours?fields=name</a>
+                        </p>
+                      </div>
+
+
+
+
+
+
+                      <div style="margin-top:50px;color:white;  ">-------------------------------------------------------------------------------------------------------------------------------------------------------</div>
+
+
+
+                      <div class="call">
+                        <h1>API Call</h1>
+                        <p>You can call by using Url :- https://natour-api.herokuapp.com/api/v1/tours?{ <span style="color:#FF1744">option</span> }<br>Http method which is used in this section is GET method</p>
+                      </div>
+            
+                      <div class="parameter">
+                        <h1>Parameters</h1>
+                        <h2>Pagination</h2>
+                        <p>You can use parameter for limiting the content per page(<span style="color:#FF1744">limit parameter</span>) and showing a particular page(<span style="color:#FF1744">page parameter</span>).<br>{ <span style="color:#FF1744">option</span> } can be <span style="color:#FF1744">page=1&limit=10</span>
+                        </div>
+          
+                        <div class="example">
+                          <h1>Example</h1>
+                          <p style="margin-bottom: 50px;">This will limit the content to 4 per page and show you the 3rd page(as we have total 9 documents so, it will show only 1 result).<br>
+                            <a href="https://natour-api.herokuapp.com/api/v1/tours?page=3&limit=4">https://natour-api.herokuapp.com/api/v1/tours?page=3&limit=4</a><br>
+                          </p>
+                        </div>
+
+
+
 
           </div>
 
 
-
-
-
-
-          <div class="import_export">
+          <div class="import_delete">
 
             <div class="call">
-              <h1>API Call</h1>
-              <p>You can call by using Url :- https://natour-api.herokuapp.com/{ <span style="color:#FF1744">option</span> }</p>
+              <h1>Import data to database</h1>
+              <p>You have to run the command in cmd :- <span style="color:#FF1744">node data/import_data.js --import</span><br>
+              Note:- This API feature is used during development process. You should keep your data in <span style="color:#FF1744">import_data.js</span> file inside /data folder. You should run the command inside ROOT directory that is Natour-API in this case.
+         
+              </p>
+              
             </div>
-  
-            <div class="parameter">
-              <h1>Parameters</h1>
-              <p></p>
+
+            <div class="call">
+              <h1>Delete data from database</h1>
+              <p>You have to run the command in cmd :- <span style="color:#FF1744">node data/import_data.js --delete</span><br>
+                You should run the command inside ROOT directory that is Natour-API in this case.
+              </p>
             </div>
-  
-            <div class="example">
-              <h1>Example</h1>
-              <p></p>
-            </div>
+
 
           </div>
         </div>
@@ -344,7 +456,7 @@
                <li id="tour"><a><h1>Tour Resource</h1></a></li>
                <li id="user"><a><h1>User Resource</h1></a></li>
                <li id="feature"><a><h1>Api Features</h1></a></li>
-               <li id="import_export"><a><h1>Import/Export</h1></a></li>
+               <li id="import_delete"><a><h1>import/delete</h1></a></li>
                
            </ul>
         </div>
@@ -379,7 +491,7 @@ document.querySelector('#introduction').addEventListener('click', () =>{
   document.querySelector('.tour').style.display="none";
   document.querySelector('.user').style.display="none";
   document.querySelector('.feature').style.display="none";
-  document.querySelector('.import_export').style.display="none";
+  document.querySelector('.import_delete').style.display="none";
 })
 
 document.querySelector('#static').addEventListener('click', () =>{
@@ -388,7 +500,7 @@ document.querySelector('#static').addEventListener('click', () =>{
   document.querySelector('.tour').style.display="none";
   document.querySelector('.user').style.display="none";
   document.querySelector('.feature').style.display="none";
-  document.querySelector('.import_export').style.display="none";
+  document.querySelector('.import_delete').style.display="none";
 })
 
 document.querySelector('#user').addEventListener('click', () =>{
@@ -397,7 +509,7 @@ document.querySelector('#user').addEventListener('click', () =>{
   document.querySelector('.tour').style.display="none";
   document.querySelector('.user').style.display="block";
   document.querySelector('.feature').style.display="none";
-  document.querySelector('.import_export').style.display="none";
+  document.querySelector('.import_delete').style.display="none";
 })
 
 document.querySelector('#tour').addEventListener('click', () =>{
@@ -406,7 +518,7 @@ document.querySelector('#tour').addEventListener('click', () =>{
   document.querySelector('.tour').style.display="block";
   document.querySelector('.user').style.display="none";
   document.querySelector('.feature').style.display="none";
-  document.querySelector('.import_export').style.display="none";
+  document.querySelector('.import_delete').style.display="none";
 })
 
 document.querySelector('#feature').addEventListener('click', () =>{
@@ -415,16 +527,16 @@ document.querySelector('#feature').addEventListener('click', () =>{
   document.querySelector('.tour').style.display="none";
   document.querySelector('.user').style.display="none";
   document.querySelector('.feature').style.display="block";
-  document.querySelector('.import_export').style.display="none";
+  document.querySelector('.import_delete').style.display="none";
 })
 
-document.querySelector('#import_export').addEventListener('click', () =>{
+document.querySelector('#import_delete').addEventListener('click', () =>{
   document.querySelector('.introduction').style.display="none";
   document.querySelector('.static').style.display="none";
   document.querySelector('.tour').style.display="none";
   document.querySelector('.user').style.display="none";
   document.querySelector('.feature').style.display="none";
-  document.querySelector('.import_export').style.display="block";
+  document.querySelector('.import_delete').style.display="block";
 })
 
 window.addEventListener("scroll", bgchanger);

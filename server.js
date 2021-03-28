@@ -9,22 +9,20 @@ const app = require('./app');
 
 
 const DB = process.env.DATABASE_HOSTED.replace('<DATABASE_PASSWORD>', process.env.DATABASE_PASSWORD); 
-const connectDB = async () => {
-    try{
-        await mongoose.connect(DB, {
-            useNewUrlParser: true,
-            useCreateIndex: true,
-            useFindAndModify: false,
-            useUnifiedTopology: true
-        });
-        console.log('Database Connection Successful !');
-    } catch(error){
-        console.log("mongodb not connected");
-        console.error(error.message);
-        process.exit(1);
-    }
-};
-connectDB();
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+})
+.then(() => {
+    console.log('Database Connection Successful !');
+})
+.catch((error) => {
+console.log("mongodb not connected");
+console.error(error.message);
+process.exit(1);
+});
 
 
 /* 
